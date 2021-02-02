@@ -299,32 +299,13 @@
 
           </div>
           
-      <div class="tabs tabs-comment">
-        <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-disqus">disqus</a></li>
-            <li class="tab"><a href="#comment-disqusjs">disqusjs</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane disqus" id="comment-disqus">
-              
+    
   <div class="comments">
     <div id="disqus_thread">
       <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
   </div>
   
-            </div>
-            <div class="tab-pane disqusjs" id="comment-disqusjs">
-              
-  <div class="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
-  
-            </div>
-        </div>
-      </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -510,23 +491,6 @@
       (d.head || d.body).appendChild(s);
     }
   });
-</script>
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', () => {
-    window.dsqjs = new DisqusJS({
-      api       : '' || 'https://disqus.com/api/',
-      apikey    : 'eD5EIhuP6dbLimRWbTshKPbM5wdrv1BeqysuQqxgcl8mRmgoLql1BtHgQ6ez8YGw',
-      shortname : 'jackhsu-techblog',
-      url       : "https://jackhsu-git.github.io/2021/02/01/build-blog-with-hexo/",
-      identifier: "2021/02/01/build-blog-with-hexo/",
-      title     : "用Hexo在github page上快速部屬個人部落格",
-    });
-  }, window.DisqusJS);
-});
 </script>
 
 </body>
