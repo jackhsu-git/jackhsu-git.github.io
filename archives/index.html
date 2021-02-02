@@ -17,18 +17,21 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"jackhsu-git.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jack的blog">
-<meta property="og:url" content="http://example.com/archives/index.html">
-<meta property="og:site_name" content="Jack的blog">
+  <meta name="description" content="a blog for my journey as a software engineer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Silver Bullet">
+<meta property="og:url" content="https://jackhsu-git.github.io/archives/index.html">
+<meta property="og:site_name" content="Silver Bullet">
+<meta property="og:description" content="a blog for my journey as a software engineer">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Jack Hsu">
+<meta property="article:tag" content="前端工程,軟體工程,演算法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/">
+<link rel="canonical" href="https://jackhsu-git.github.io/archives/">
 
 
 <script id="page-configurations">
@@ -41,7 +44,7 @@
   };
 </script>
 
-  <title>Archive | Jack的blog</title>
+  <title>Archive | Silver Bullet</title>
   
 
 
@@ -92,10 +95,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Jack的blog</h1>
+      <h1 class="site-title">Silver Bullet</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">前端工程師</p>
+      <p class="site-subtitle" itemprop="description">路漫漫其修远兮，吾将上下而求索 - 軟體工程師見聞</p>
   </div>
 
   <div class="site-nav-right">
@@ -162,15 +165,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-01-27T12:48:14+08:00"
-              content="2021-01-27">
-          01-27
+              datetime="2021-02-01T23:23:00+08:00"
+              content="2021-02-01">
+          02-01
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/01/27/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
+          <a class="post-title-link" href="/2021/02/01/build-blog-with-hexo/" itemprop="url">
+            <span itemprop="name">用Hexo在github page上快速部屬個人部落格</span>
           </a>
       </div>
 
@@ -242,7 +245,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Jack Hsu</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">a blog for my journey as a software engineer</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -252,6 +255,14 @@
           <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
@@ -336,6 +347,18 @@
   
 
   
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://jackhsu-tech.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+
 
 </body>
 </html>

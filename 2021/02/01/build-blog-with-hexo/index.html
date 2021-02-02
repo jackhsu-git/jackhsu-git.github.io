@@ -20,31 +20,37 @@
     var CONFIG = {"hostname":"jackhsu-git.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="a blog for my journey as a software engineer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Silver Bullet">
-<meta property="og:url" content="https://jackhsu-git.github.io/index.html">
+  <meta name="description" content="介紹如何用hexo在github page上部屬靜態網站">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Hexo在github page上快速部屬個人部落格">
+<meta property="og:url" content="https://jackhsu-git.github.io/2021/02/01/build-blog-with-hexo/index.html">
 <meta property="og:site_name" content="Silver Bullet">
-<meta property="og:description" content="a blog for my journey as a software engineer">
+<meta property="og:description" content="介紹如何用hexo在github page上部屬靜態網站">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jackhsu-git.github.io/2021/02/01/build-blog-with-hexo/Hexo-logo.jpg">
+<meta property="article:published_time" content="2021-02-01T15:23:00.000Z">
+<meta property="article:modified_time" content="2021-02-02T01:40:20.062Z">
 <meta property="article:author" content="Jack Hsu">
-<meta property="article:tag" content="前端工程,軟體工程,演算法">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="github page">
+<meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jackhsu-git.github.io/2021/02/01/build-blog-with-hexo/Hexo-logo.jpg">
 
-<link rel="canonical" href="https://jackhsu-git.github.io/">
+<link rel="canonical" href="https://jackhsu-git.github.io/2021/02/01/build-blog-with-hexo/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Silver Bullet</title>
+  <title>用Hexo在github page上快速部屬個人部落格 | Silver Bullet</title>
   
 
 
@@ -143,9 +149,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -161,10 +168,9 @@
       <meta itemprop="name" content="Silver Bullet">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/01/build-blog-with-hexo/" class="post-title-link" itemprop="url">用Hexo在github page上快速部屬個人部落格</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          用Hexo在github page上快速部屬個人部落格
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -207,6 +213,7 @@
   </span>
   
   
+            <div class="post-description">介紹如何用hexo在github page上部屬靜態網站</div>
 
         </div>
       </header>
@@ -217,36 +224,107 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>介紹如何用hexo在github page上部屬靜態網站</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/01/build-blog-with-hexo/">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>身為軟體工程師，很重要的一件事是把自己所學紀錄整理下來。不僅能夠省下未來重複查找文件、<a target="_blank" rel="noopener" href="https://stackoverflow.com/">StackOverflow</a>的時間，還能幫助自己內化所學，或是與他人分享討論。這時候部落格，特別是靜態網站，就是很方便快速的選項。</p>
+<p>這次想分享的工具有</p>
+<p><img src="/2021/02/01/build-blog-with-hexo/Hexo-logo.jpg" alt="hexo logo"> </p>
+<ul>
+<li>Hexo，由<a target="_blank" rel="noopener" href="https://github.com/tommy351">Tommy Chen</a>開發，非常熱門的static site generator。</li>
+<li><a target="_blank" rel="noopener" href="https://pages.github.com/">github pages</a>，是由github提供的hosting服務，可以免費託管個人或是專案網站</li>
+</ul>
+<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">Nodejs</a> 建議10.0以上版本<br><a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a></p>
+<p>雖然這兩項很常見，但是如果遇到問題可以參見<a target="_blank" rel="noopener" href="https://hexo.io/docs/index.html#Requirements">hexo官方環境設置</a></p>
+<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><p>在terminal輸入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">hexo init &lt;指定資料夾，如未指定則為terminal current path&gt;</span><br></pre></td></tr></table></figure>
+<p>就完成了 ! 接下來馬上開始創建第一篇文章</p>
+<h2 id="寫作"><a href="#寫作" class="headerlink" title="寫作"></a>寫作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p>就可以從scaffold資料夾裡面的模板自動生成文章(.md)檔，預設有</p>
+<ul>
+<li>draft</li>
+<li>post</li>
+<li>draft</li>
+</ul>
+<h2 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h2><p>hexo提供的設定都放在根目錄 <strong>_config.yml</strong> 檔案裡，這邊介紹一些基本的設定</p>
+<ul>
+<li>Site<ul>
+<li>title: 網站名稱</li>
+<li>subtitle: 副標</li>
+<li>description: 網站描述</li>
+<li>keywords: 可供搜尋引擎查找的關鍵字，似乎有利於SEO，但是這還需再研究</li>
+</ul>
+</li>
+<li>Extentsions<ul>
+<li>theme: 網站layout主題</li>
+</ul>
+</li>
+<li>Deployment<ul>
+<li>deploy: 部屬相關設定</li>
+</ul>
+</li>
+</ul>
+<p>這邊特別說明一下theme、deploy這兩個比較重要的設定。</p>
+<h3 id="主題"><a href="#主題" class="headerlink" title="主題"></a>主題</h3><p>以這個blog為例，使用的是 <strong>next</strong> 這個主題。個人覺得簡單也好看，滿適合這樣內容為主的網誌。</p>
+<p>安裝</p>
+<p>在根目錄</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>並且到 _config.yml修改theme</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+<p>這樣就完成了</p>
+<h3 id="部屬到github-page"><a href="#部屬到github-page" class="headerlink" title="部屬到github page"></a>部屬到github page</h3><p>首先</p>
+
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/github-page/" rel="tag"># github page</a>
+              <a href="/tags/blog/" rel="tag"># blog</a>
+          </div>
+
+        
+
+
+        
       </footer>
+    
   </article>
   
   
   
 
 
-  
-
-
 
           </div>
           
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-disqus">disqus</a></li>
+            <li class="tab"><a href="#comment-disqusjs">disqusjs</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane disqus" id="comment-disqus">
+              
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+            </div>
+            <div class="tab-pane disqusjs" id="comment-disqusjs">
+              
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+            </div>
+        </div>
+      </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -293,6 +371,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%92%B0%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D"><span class="nav-number">3.</span> <span class="nav-text">安裝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%AB%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">寫作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A"><span class="nav-number">5.</span> <span class="nav-text">設定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%A1%8C"><span class="nav-number">5.1.</span> <span class="nav-text">主題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E5%B1%AC%E5%88%B0github-page"><span class="nav-number">5.2.</span> <span class="nav-text">部屬到github page</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -412,7 +491,43 @@
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
 </script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://jackhsu-git.github.io/2021/02/01/build-blog-with-hexo/";
+    this.page.identifier = "2021/02/01/build-blog-with-hexo/";
+    this.page.title = "用Hexo在github page上快速部屬個人部落格";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jackhsu-tech.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', () => {
+    window.dsqjs = new DisqusJS({
+      api       : '' || 'https://disqus.com/api/',
+      apikey    : 'eD5EIhuP6dbLimRWbTshKPbM5wdrv1BeqysuQqxgcl8mRmgoLql1BtHgQ6ez8YGw',
+      shortname : 'jackhsu-techblog',
+      url       : "https://jackhsu-git.github.io/2021/02/01/build-blog-with-hexo/",
+      identifier: "2021/02/01/build-blog-with-hexo/",
+      title     : "用Hexo在github page上快速部屬個人部落格",
+    });
+  }, window.DisqusJS);
+});
+</script>
 
 </body>
 </html>
